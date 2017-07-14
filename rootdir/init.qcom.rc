@@ -83,6 +83,7 @@ on fs
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
+    setprop sys.usb.ffs.aio_compat 1
     ## ensure correct calibration file permissions
     chown root system /persist/sensorcal.json
     chmod 0660 /persist/sensorcal.json
