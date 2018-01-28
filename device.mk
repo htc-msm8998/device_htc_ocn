@@ -220,7 +220,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0-convert \
     android.hardware.health@1.0-impl \
-    android.hardware.health@1.0-service \
+    android.hardware.health@1.0-service
 
 # hidl base, or8 props still depend on it
 PRODUCT_PACKAGES += \
@@ -383,6 +383,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
+
+# VNDK-SP:
+PRODUCT_PACKAGES += \
+    vndk-sp
 
 # Wifi
 PRODUCT_PACKAGES += \
