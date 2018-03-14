@@ -110,6 +110,7 @@ persist.mm.enable.prefetch=true
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.sys.fw.bg_apps_limit=60
+ro.vendor.qti.config.zram=true
 
 #property for vendor specific library
 ro.vendor.at_library=libqti-at.so
