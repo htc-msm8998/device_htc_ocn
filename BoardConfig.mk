@@ -191,7 +191,6 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/compatibility_matrix.xml
 
 # Init
-#TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_ocn
 TARGET_RECOVERY_DEVICE_MODULES := libinit_ocn
@@ -231,7 +230,6 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
-# Wifi
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
