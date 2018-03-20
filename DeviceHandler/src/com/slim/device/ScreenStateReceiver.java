@@ -23,7 +23,7 @@ import android.content.SharedPreferences;
 import android.hardware.SensorManager;
 import android.util.Log;
 
-import com.slim.device.settings.ScreenOffGesture;
+import com.slim.device.settings.Gesture;
 
 public class ScreenStateReceiver extends BroadcastReceiver {
 
@@ -31,8 +31,8 @@ public class ScreenStateReceiver extends BroadcastReceiver {
 
     public void onReceive(Context context, Intent intent) {
         SharedPreferences prefs = context.getSharedPreferences(
-                ScreenOffGesture.GESTURE_SETTINGS, Activity.MODE_PRIVATE);
-        if (!prefs.getBoolean(ScreenOffGesture.PREF_GESTURE_ENABLE, true)) return;
+                Gesture.GESTURE_SETTINGS, Activity.MODE_PRIVATE);
+        if (!prefs.getBoolean(Gesture.PREF_GESTURE_ENABLE, true)) return;
         Intent serviceIntent = new Intent(context, SensorService.class);
         if (intent.getAction().equals(Intent.ACTION_SCREEN_ON))  {
             context.stopService(serviceIntent);

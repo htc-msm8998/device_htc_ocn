@@ -15,17 +15,18 @@
 -->
 
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:slim="http://schemas.android.com/apk/res/slim">
 
         <SwitchPreference
             android:key="enable_gestures"
-            android:title="@string/enable_gestures_title"
+            android:title="@string/enable_screen_off_gestures_title"
             android:persistent="false"
-            android:summary="@string/enable_gestures_summary" />
+            android:summary="@string/enable_screen_off_gestures_summary" />
 
         <PreferenceCategory
             android:key="gestures"
-            android:title="@string/gestures_title" >
+            android:title="@string/screen_off_gestures_title" >
 
             <Preference
                 android:key="gesture_swipe_down"
@@ -62,6 +63,42 @@
                 android:title="@string/camera_title"
                 android:persistent="false"
                 android:dependency="enable_gestures" />
+
+        </PreferenceCategory>
+
+        <SwitchPreference
+            android:key="enable_squeeze_gestures"
+            android:title="@string/enable_squeeze_gestures_title"
+            android:persistent="false"
+            android:summary="@string/enable_squeeze_gestures_summary" />
+
+        <PreferenceCategory
+            android:key="squeeze_gestures"
+            android:title="@string/squeeze_gestures_title" >
+
+           <slim.preference.SlimSeekBarPreferencev2
+                android:key="squeeze_force"
+                android:dependency="enable_squeeze_gestures"
+                android:title="@string/squeeze_force_title"
+                android:summary="@string/squeeze_force_summary"
+                slim:maxValue="282"
+                slim:minValue="102"
+                slim:defValue="202"
+                slim:units="F"
+                slim:interval="20"
+                android:persistent="false" />
+
+           <Preference
+                android:key="gesture_short_squeeze"
+                android:title="@string/short_squeeze_title"
+                android:persistent="false"
+                android:dependency="enable_squeeze_gestures" />
+
+           <Preference
+                android:key="gesture_long_squeeze"
+                android:title="@string/long_squeeze_title"
+                android:persistent="false"
+                android:dependency="enable_squeeze_gestures" />
 
         </PreferenceCategory>
 

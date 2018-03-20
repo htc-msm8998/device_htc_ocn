@@ -31,6 +31,8 @@ public class BootReceiver extends BroadcastReceiver {
         if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
             Intent serviceIntent = new Intent(context, ScreenStateService.class);
             context.startService(serviceIntent);
+            Intent squeezeserviceIntent = new Intent(context, SqueezeService.class);
+            context.startService(squeezeserviceIntent);
         }
     }
 }

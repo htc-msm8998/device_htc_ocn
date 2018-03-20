@@ -38,7 +38,7 @@ import slim.utils.FileUtils;
 import slim.action.Action;
 import slim.action.ActionConstants;
 
-import com.slim.device.settings.ScreenOffGesture;
+import com.slim.device.settings.Gesture;
 
 public class SensorService extends Service implements SensorEventListener {
 
@@ -80,7 +80,7 @@ public class SensorService extends Service implements SensorEventListener {
         super.onCreate();
 
         mContext = getApplicationContext();
-        mPrefs = getSharedPreferences(ScreenOffGesture.GESTURE_SETTINGS, Activity.MODE_PRIVATE);
+        mPrefs = getSharedPreferences(Gesture.GESTURE_SETTINGS, Activity.MODE_PRIVATE);
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
@@ -134,27 +134,27 @@ public class SensorService extends Service implements SensorEventListener {
         String action = null;
         switch (gesture) {
             case DOUBLE_TAP:
-                action = mPrefs.getString(ScreenOffGesture.PREF_DOUBLE_TAP,
+                action = mPrefs.getString(Gesture.PREF_DOUBLE_TAP,
                         ActionConstants.ACTION_WAKE_DEVICE);
                 break;
             case SWIPE_UP:
-                action = mPrefs.getString(ScreenOffGesture.PREF_SWIPE_UP,
+                action = mPrefs.getString(Gesture.PREF_SWIPE_UP,
                         ActionConstants.ACTION_TORCH);
                 break;
             case SWIPE_DOWN:
-                action = mPrefs.getString(ScreenOffGesture.PREF_SWIPE_DOWN,
+                action = mPrefs.getString(Gesture.PREF_SWIPE_DOWN,
                         ActionConstants.ACTION_MEDIA_PLAY_PAUSE);
                 break;
             case SWIPE_LEFT:
-                action = mPrefs.getString(ScreenOffGesture.PREF_SWIPE_LEFT,
+                action = mPrefs.getString(Gesture.PREF_SWIPE_LEFT,
                         ActionConstants.ACTION_MEDIA_PREVIOUS);
                 break;
             case SWIPE_RIGHT:
-                action = mPrefs.getString(ScreenOffGesture.PREF_SWIPE_RIGHT,
+                action = mPrefs.getString(Gesture.PREF_SWIPE_RIGHT,
                         ActionConstants.ACTION_MEDIA_NEXT);
                 break;
             case CAMERA:
-                action = mPrefs.getString(ScreenOffGesture.PREF_CAMERA,
+                action = mPrefs.getString(Gesture.PREF_CAMERA,
                         ActionConstants.ACTION_CAMERA);
                 break;
         }

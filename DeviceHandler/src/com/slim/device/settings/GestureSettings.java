@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 SlimRoms Project
+ * Copyright (C) 2014 Slimroms
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,30 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.slim.device.settings;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import java.util.Iterator;
+import com.android.settingslib.drawer.SettingsDrawerActivity;
 
-public class ScreenOffGestureSettings extends Activity {
+import com.slim.device.R;
+
+public class GestureSettings extends SettingsDrawerActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new ScreenOffGesture()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+                new Gesture()).commit();
         getActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
+
 }
