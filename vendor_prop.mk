@@ -99,6 +99,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
     ro.product.display_resolution = 5.5 inch WQHD resolution \
     ro.sf.lcd_density=640 \
+    vendor.display.disable_rotator_downscale=1 \
     sdm.debug.disable_skip_validate=1
 
 # Factory Reset Protection
