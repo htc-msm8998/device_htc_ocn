@@ -28,6 +28,8 @@ import android.hardware.SensorManager;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.SystemClock;
+import android.os.Vibrator;
+import android.os.VibrationEffect;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
@@ -43,7 +45,7 @@ import com.slim.device.settings.Gesture;
 
 public class SqueezeService extends Service implements SensorEventListener {
 
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = false;
 
     private static final int SHORTSQUEEZE = 100;
     private static final int LONGSQUEEZE = 101;
@@ -152,6 +154,10 @@ public class SqueezeService extends Service implements SensorEventListener {
         }
         if (action == null || action != null && action.equals(ActionConstants.ACTION_NULL)) {
             return;
+        }
+        if (mPrefs.getBoolean(Gesture.PREF_SQUEEZE_GESTURE_HAPTIC_ENABLE, true)) {
+            Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            v.vibrate(VibrationEffect.createOneShot(500,VibrationEffect.DEFAULT_AMPLITUDE));
         }
         if (action.equals(ActionConstants.ACTION_CAMERA)
                 || !action.startsWith("**")) {

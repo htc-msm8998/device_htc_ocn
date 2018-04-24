@@ -29,6 +29,8 @@
     <string name="enable_screen_off_gestures_summary">Enable screen off gestures</string>
     <string name="enable_squeeze_gestures_title">Enable Squeeze gestures</string>
     <string name="enable_squeeze_gestures_summary">Enable Squeeze gestures</string>
+    <string name="enable_squeeze_gestures_haptic">Enable Squeeze gestures Haptic Feedback</string>
+    <string name="enable_squeeze_gestures_haptic_summary">Enable Squeeze gestures Vibration</string>
     <string name="squeeze_force_title">Required Squeeze force</string>
     <string name="squeeze_force_summary">Change required Squeeze force</string>
     <string name="screen_off_gestures_title">Screen off Gestures</string>

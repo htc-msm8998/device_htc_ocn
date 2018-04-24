@@ -64,6 +64,7 @@ public class Gesture extends PreferenceFragment implements
     public static final String PREF_DOUBLE_TAP = "gesture_double_tap";
     public static final String PREF_CAMERA = "gesture_camera";
     public static final String PREF_SQUEEZE_GESTURE_ENABLE = "enable_squeeze_gestures";
+    public static final String PREF_SQUEEZE_GESTURE_HAPTIC_ENABLE = "enable_squeeze_gestures_haptic";
     public static final String PREF_SHORT_SQUEEZE = "gesture_short_squeeze";
     public static final String PREF_LONG_SQUEEZE = "gesture_long_squeeze";
     public static final String PREF_SQUEEZE_FORCE = "squeeze_force";
@@ -84,6 +85,7 @@ public class Gesture extends PreferenceFragment implements
     private Preference mLongSqueeze;
     private SwitchPreference mEnableGestures;
     private SwitchPreference mEnableSqueezeGestures;
+    private SwitchPreference mEnableSqueezeGesturesHaptic;
     private SlimSeekBarPreferencev2 mSqueezeForce;
 
     private boolean mCheckPreferences;
@@ -127,6 +129,7 @@ public class Gesture extends PreferenceFragment implements
 
         mEnableGestures = (SwitchPreference) prefs.findPreference(PREF_GESTURE_ENABLE);
         mEnableSqueezeGestures = (SwitchPreference) prefs.findPreference(PREF_SQUEEZE_GESTURE_ENABLE);
+        mEnableSqueezeGesturesHaptic = (SwitchPreference) prefs.findPreference(PREF_SQUEEZE_GESTURE_HAPTIC_ENABLE);
 
         mSwipeUp = (Preference) prefs.findPreference(PREF_SWIPE_UP);
         mSwipeDown = (Preference) prefs.findPreference(PREF_SWIPE_DOWN);
@@ -167,6 +170,11 @@ public class Gesture extends PreferenceFragment implements
                 mPrefs.getBoolean(PREF_SQUEEZE_GESTURE_ENABLE, true);
         mEnableSqueezeGestures.setChecked(enableSqueezeGestures);
         mEnableSqueezeGestures.setOnPreferenceChangeListener(this);
+
+        boolean enableSqueezeGesturesHaptic =
+                mPrefs.getBoolean(PREF_SQUEEZE_GESTURE_HAPTIC_ENABLE, true);
+        mEnableSqueezeGesturesHaptic.setChecked(enableSqueezeGesturesHaptic);
+        mEnableSqueezeGesturesHaptic.setOnPreferenceChangeListener(this);
 
         mCheckPreferences = true;
         return prefs;
@@ -256,6 +264,10 @@ public class Gesture extends PreferenceFragment implements
             } else {
             context.stopService(serviceIntent);
             }
+            return true;
+        } else if (preference == mEnableSqueezeGesturesHaptic) {
+            mPrefs.edit()
+                    .putBoolean(PREF_SQUEEZE_GESTURE_HAPTIC_ENABLE, (Boolean) newValue).commit();
             return true;
         } else if (preference == mSqueezeForce) {
             mPrefs.edit()

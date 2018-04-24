@@ -81,9 +81,9 @@
                 android:dependency="enable_squeeze_gestures"
                 android:title="@string/squeeze_force_title"
                 android:summary="@string/squeeze_force_summary"
-                slim:maxValue="282"
-                slim:minValue="102"
-                slim:defValue="202"
+                slim:maxValue="600"
+                slim:minValue="100"
+                slim:defValue="300"
                 slim:units="F"
                 slim:interval="20"
                 android:persistent="false" />
@@ -99,6 +99,12 @@
                 android:title="@string/long_squeeze_title"
                 android:persistent="false"
                 android:dependency="enable_squeeze_gestures" />
+
+        <SwitchPreference
+            android:key="enable_squeeze_gestures_haptic"
+            android:title="@string/enable_squeeze_gestures_haptic"
+            android:persistent="false"
+            android:summary="@string/enable_squeeze_gestures_haptic_summary" />
 
         </PreferenceCategory>
 
