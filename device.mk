@@ -431,6 +431,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.offload@1.0-service \
     libqsap_sdk \
     libQWiFiSoftApCfg \
+    libwifi-hal-qcom \
     libwpa_client \
     hostapd \
     hostapd_cli \
