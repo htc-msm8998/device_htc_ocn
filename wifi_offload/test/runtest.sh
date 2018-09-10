@@ -24,9 +24,9 @@ set -e # fail early
 
 # NOTE We can't actually run these commands, since they rely on functions added by
 #      build/envsetup.sh to the bash shell environment.
-echo "+ mmma -j32 $ANDROID_BUILD_TOP/device/google/wahoo"
+echo "+ mmma -j32 $ANDROID_BUILD_TOP/device/htc/ocn"
 make -j32 -C $ANDROID_BUILD_TOP -f build/core/main.mk \
-    MODULES-IN-device-google-wahoo-wifi_offload
+    MODULES-IN-device-htc-ocn-wifi_offload
 
 set -x # print commands
 
