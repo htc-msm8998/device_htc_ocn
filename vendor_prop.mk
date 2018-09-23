@@ -90,7 +90,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.gralloc.enable_fb_ubwc=1 \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
@@ -100,7 +99,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.display_resolution = 5.5 inch WQHD resolution \
     ro.sf.lcd_density=640 \
     vendor.display.disable_rotator_downscale=1 \
-    sdm.debug.disable_skip_validate=1
+    vendor.display.perf_hint_window=50 \
+    vendor.gralloc.enable_fb_ubwc=1 \
+    vendor.display.disable_skip_validate=1
 
 # Factory Reset Protection
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -142,8 +143,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.bg_apps_limit=60 \
     ro.vendor.at_library=libqti-at.so \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.qti.config.zram=true \
-    sdm.perf_hint_window=50
+    ro.vendor.qti.config.zram=true
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
