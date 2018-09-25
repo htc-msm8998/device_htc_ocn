@@ -153,17 +153,17 @@ PRODUCT_PACKAGES += \
     libbthost_if
 
 # Camera 
- PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
-    camera.device@1.0-impl \
-    camera.device@3.2-impl \
-    libqomx_core \
-    libmmjpeg_interface \
-    libmmcamera_interface \
-    vendor.qti.hardware.camera.device@1.0 \
-    vendor.qti.hardware.camera.device@1.0_vendor \
-    libcamera_shim
+# PRODUCT_PACKAGES += \
+#    android.hardware.camera.provider@2.4-impl \
+#    android.hardware.camera.provider@2.4-service \
+#    camera.device@1.0-impl \
+#    camera.device@3.2-impl \
+#    libqomx_core \
+#    libmmjpeg_interface \
+#    libmmcamera_interface \
+#    vendor.qti.hardware.camera.device@1.0 \
+#    vendor.qti.hardware.camera.device@1.0_vendor \
+#    libcamera_shim
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
