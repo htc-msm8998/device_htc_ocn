@@ -561,7 +561,6 @@ etc/permissions/com.quicinc.cne.xml
 framework/cneapiclient.jar
 framework/com.quicinc.cne.jar
 framework/com.quicinc.cne.api-V1.0-java.jar
--priv-app/CNEService/CNEService.apk
 vendor/lib/libcneqmiutils.so
 lib/libvendorconn.so
 vendor/lib/libwms.so
@@ -755,7 +754,6 @@ etc/permissions/com.qualcomm.location.xml
 etc/permissions/izat.xt.srv.xml
 framework/com.qti.location.sdk.jar
 framework/izat.xt.srv.jar
--priv-app/com.qualcomm.location/com.qualcomm.location.apk
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
 vendor/bin/slim_daemon
@@ -1109,7 +1107,6 @@ bin/qvrcameratseq64
 bin/qvrcameratest
 
 # Radio
--app/QtiTelephonyService/QtiTelephonyService.apk
 vendor/bin/netmgrd
 vendor/bin/port-bridge
 vendor/bin/rmt_storage
@@ -1117,7 +1114,6 @@ vendor/bin/tftp_server
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/netmgr_config.xml
 etc/permissions/qcrilhook.xml
-framework/QtiTelephonyServicelibrary.jar
 vendor/bin/qti
 vendor/lib/com.quicinc.cne.api@1.0.so
 vendor/lib/com.quicinc.cne.constants@1.0.so
@@ -1185,7 +1181,6 @@ vendor/bin/imsqmidaemon
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsrcsd
--app/ims/ims.apk|2e78bcabe64ed1a988f8550ec78fdbc9ee7704be
 vendor/framework/qti-vzw-ims-internal.jar
 vendor/lib64/lib-dplmedia.so
 vendor/lib64/lib-imsrcs-v2.so
