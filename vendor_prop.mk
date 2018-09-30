@@ -137,7 +137,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.core_ctl_min_cpu=0 \
     ro.core_ctl_max_cpu=4 \
     ro.sys.fw.bg_apps_limit=60 \
-    ro.vendor.at_library=libqti-at.so \
     ro.vendor.extension_library=libqti-perfd-client.so \
     ro.vendor.qti.config.zram=true
 
